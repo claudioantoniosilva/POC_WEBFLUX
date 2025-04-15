@@ -1,0 +1,3 @@
+spring.application.name=saerv-webflux
+db.port=27017
+dname=testdb

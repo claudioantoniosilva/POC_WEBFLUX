@@ -1,0 +1,5 @@
+package com.webflux.srvwebflux.contracts;
+
+public class IEmployeeService {
+
+}

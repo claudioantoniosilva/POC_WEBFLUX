@@ -1,0 +1,8 @@
+package com.webflux.srvwebflux.contracts;
+
+public interface IEmployeeService {
+	
+	void create(com.webflux.srvwebflux.model.Employee employee);
+	
+
+}

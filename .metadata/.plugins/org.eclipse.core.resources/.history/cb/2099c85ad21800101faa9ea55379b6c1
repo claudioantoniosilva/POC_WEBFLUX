@@ -1,0 +1,5 @@
+package com.webflux.srvwebflux.configuration;
+
+public class WebFluxConfig {
+
+}

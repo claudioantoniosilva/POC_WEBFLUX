@@ -1,0 +1,49 @@
+package com.webflux.srvwebflux.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.webflux.srvwebflux.contracts.IEmployeeService;
+import com.webflux.srvwebflux.dao.EmployeeRepository;
+import com.webflux.srvwebflux.model.Employee;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Service
+public class EmployeeService implements IEmployeeService {
+
+	@Autowired
+	EmployeeRepository employeeRepository;
+	
+	@Override
+	public void create(Employee employee) {
+		employeeRepository.save(employee);	
+	}
+
+	@Override
+	public Mono<Employee> findById(int id) {
+		return employeeRepository.findById(id);
+	}
+
+	@Override
+	public Flux<Employee> findByName(String name) {
+		return employeeRepository.findByName(name);
+	}
+
+	@Override
+	public Flux<Employee> findAll() {
+		return employeeRepository.findAll();
+	}
+
+	@Override
+	public Mono<Employee> update(Employee e) {
+		return employeeRepository.save(e);
+	}
+
+	@Override
+	public Mono<Void> delete(Integer id) {
+		return employeeRepository.deleteById(id);
+	}
+
+	
+	
+}

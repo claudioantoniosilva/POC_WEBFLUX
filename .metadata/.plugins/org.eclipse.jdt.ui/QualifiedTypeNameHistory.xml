@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.web.reactive.config.EnableWebFlux"/>
+    <fullyQualifiedTypeName name="org.springframework.web.reactive.config.WebFluxConfigurer"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguration"/>
+    <fullyQualifiedTypeName name="com.mongodb.reactivestreams.client.MongoClients"/>
+    <fullyQualifiedTypeName name="com.webflux.srvwebflux.contracts.IEmployeeService"/>
+    <fullyQualifiedTypeName name="com.webflux.srvwebflux.model.Employee"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.repository.ReactiveMongoRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+</qualifiedTypeNameHistroy>
