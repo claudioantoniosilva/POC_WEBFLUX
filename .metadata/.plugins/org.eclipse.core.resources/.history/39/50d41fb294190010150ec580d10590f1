@@ -1,6 +1,5 @@
 package com.webflux.srvwebflux.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.webflux.srvwebflux.contracts.IEmployeeService;
@@ -11,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class EmployeeService implements IEmployeeService {
-	
+
 	@Autowired
 	EmployeeRepository employeeRepository;
 	
@@ -21,31 +20,12 @@ public class EmployeeService implements IEmployeeService {
 	}
 	@Override
 	public Mono<Employee> findById(int id) {
-		return employeeRepository.findById(id)
-				.map(emp -> {
-					emp.setSalary(1000);
-					return emp;
-				})
-				.doOnSuccess(success -> System.out.println("Salário alterado durante a consulta!"))
-				.onErrorMap(e -> new RuntimeException("Erro consultar o empregado" + e.getMessage()));
-				
+		return employeeRepository.findById(id);
 	}
-	
 	@Override
 	public Flux<Employee> findByName(String name) {
-		return employeeRepository.findByName(name)
-				.map(emp -> {
-					emp.setName(name.toUpperCase());
-					return emp;
-				})
-				.doOnError(e -> System.out.println("Error"))
-				.onErrorMap(e -> new RuntimeException("Erro ao consultar lista de empregados"))
-				.onBackpressureBuffer()
-				.onBackpressureDrop();
-				
+		return employeeRepository.findByName(name);
 	}
-	
-	
 	@Override
 	public Flux<Employee> findAll() {
 		return employeeRepository.findAll();
